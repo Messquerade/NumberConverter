@@ -13,7 +13,19 @@ namespace NumberConverter.Models.Tests
     {
       Assert.AreEqual("three", Convert.NumberToText(3));
     }
+
+    [TestMethod]
+    public void NumberToText_ConvertsTensPlace_Eleven()
+    {
+      Assert.AreEqual("eleven", Convert.NumberToText(11));
+    }
+
+    [TestMethod]
+    public void NumberToText_ConvertsTensPlaceWithOnesPlace_TwentyOne()
+    {
+      Assert.AreEqual("twenty one", Convert.NumberToText(21));
+    }
+
+    
   }
 }
-
-// C:\Users\Anna\Desktop\NumberConverter.Solution\NumberConverter.Tests\ModelTests\ConvertTests.cs(12,32): error CS0234: The type or namespace name 'NumberToText' does not exist in the namespace 'NumberConverter' (are you missing an assembly reference?) [C:\Users\Anna\Desktop\NumberConverter.Solution\NumberConverter.Tests\NumberConverter.Tests.csproj]

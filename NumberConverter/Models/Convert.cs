@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace NumberConverter.Models
@@ -8,7 +9,7 @@ namespace NumberConverter.Models
   {
     public static string NumberToText(int input)
     {
-      Dictionary<int, string> toTextOneNine = new Dictionary<int, string>()
+      Dictionary<int, string> toTextOnes = new Dictionary<int, string>()
       {
         {1, "one"},
         {2, "two"},
@@ -31,10 +32,30 @@ namespace NumberConverter.Models
         {16, "sixteen"},
         {17, "seventeen"},
         {18, "eighteen"},
-        {19, "nineteen"}
+        {19, "nineteen"},
+        {20, "twenty"},
+        {30, "thirty"},
+        {40, "forty"},
+        {50, "fifty"},
+        {60, "sixty"},
+        {70, "seventy"},
+        {80, "eighty"},
+        {90, "ninety"}
       };
 
-      return "zero";
+      int[] numbersArray = Array.ConvertAll(input.ToString().ToArray(), x=>(int)x);
+        // int[] numbersArray = input.ToString().Select(c => (int)Char.GetNumericValue(c)).ToArray();
+      
+      Console.WriteLine(numbersArray[0]);
+      string result = "";
+      if (numbersArray.Length == 1)
+      {
+      result = toTextOnes[input];
+      } else
+      {
+      result = toTextTens[input];
+      }
+      return result;
     }
 
   }
