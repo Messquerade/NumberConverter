@@ -26,6 +26,26 @@ namespace NumberConverter.Models.Tests
       Assert.AreEqual("twenty one", Convert.NumberToText(21));
     }
 
+    [TestMethod]
+    public void NumberToText_ConvertsTensPlaceWithOnesPlace_NinetyNine()
+    {
+      Assert.AreEqual("ninety nine", Convert.NumberToText(99));
+    }
+    
+    [TestMethod]
+    public void NumberToText_ConvertsTensPlaceWithOnesPlace_Ninety()
+    {
+      Assert.AreEqual("ninety", Convert.NumberToText(90));
+    }
+    
+    [TestMethod]
+    public void NumberToText_ConvertsTensPlaceWithOnesPlace_Ninety()
+    {
+      Assert.AreEqual("ninety", Convert.NumberToText(90));
+    }
+
+
+
     
   }
 }

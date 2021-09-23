@@ -43,20 +43,29 @@ namespace NumberConverter.Models
         {90, "ninety"}
       };
 
-      int[] numbersArray = Array.ConvertAll(input.ToString().ToArray(), x=>(int)x);
-        // int[] numbersArray = input.ToString().Select(c => (int)Char.GetNumericValue(c)).ToArray();
+      // int[] numbersArray = Array.ConvertAll(input.ToString().ToArray(), x=>(int)x);
+        int[] numbersArray = input.ToString().Select(c => (int)Char.GetNumericValue(c)).ToArray();
       
-      Console.WriteLine(numbersArray[0]);
       string result = "";
+
+      foreach (int number in numbersArray)
+      {
+        Console.WriteLine(number);
+      }
+      
       if (numbersArray.Length == 1)
       {
-      result = toTextOnes[input];
+        result = toTextOnes[input];
+      } else if (numbersArray[0] == 1 || numbersArray[1] == 0)
+      {
+        result = toTextTens[input];
       } else
       {
-      result = toTextTens[input];
+        result = toTextTens[numbersArray[0] * 10] +  " " + toTextOnes[numbersArray[1]];
       }
       return result;
     }
 
   }
 }
+
