@@ -37,11 +37,11 @@ namespace NumberConverter.Models.Tests
     {
       Assert.AreEqual("ninety", Convert.NumberToText(90));
     }
-    
+
     [TestMethod]
-    public void NumberToText_ConvertsTensPlaceWithOnesPlace_Ninety()
+    public void NumberToText_ConvertsHundredsPlace_OneHundred()
     {
-      Assert.AreEqual("ninety", Convert.NumberToText(90));
+      Assert.AreEqual("one hundred", Convert.NumberToText(100));
     }
 
 

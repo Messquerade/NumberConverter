@@ -42,6 +42,11 @@ namespace NumberConverter.Models
         {80, "eighty"},
         {90, "ninety"}
       };
+      Dictionary<int, string> toTextBigNumbers = new Dictionary<int, string>()
+      {
+        {3, "hundred"},
+        {4, "thousand"},
+      };
 
       // int[] numbersArray = Array.ConvertAll(input.ToString().ToArray(), x=>(int)x);
         int[] numbersArray = input.ToString().Select(c => (int)Char.GetNumericValue(c)).ToArray();
@@ -68,4 +73,20 @@ namespace NumberConverter.Models
 
   }
 }
+// bignumbersarray[numbersArray.length]
+// 300
+// 1100
+// if (numbersArray.length > 2)
+// counter = 0
+// for (int i = numbersArray.length; i <=2; i--)
 
+//  result = toTextOnes[numbersArray[counter]] + bignumbersArray[i]
+    // counter++
+// bignumbersarray = {{3, "hundred"}, {4, "thousand"}, {5, "ten thousand"}, {6, hundred thousand}}
+
+
+// number % 100 == 0
+// number = 1123;
+// if your number / 1000 > 0
+// function (number / 1000) + thousand
+// number % 1000
